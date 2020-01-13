@@ -18,7 +18,6 @@ example:
 # applications
 Executited periodically from somewhere will send notifications when healthcheks are in "red"
 
-# seealso
-
+# see-also
 https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm
 https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Concepts/healthchecks.htm
