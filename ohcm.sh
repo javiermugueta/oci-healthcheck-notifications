@@ -3,7 +3,8 @@
 PROBEID=$1
 TOPIC=$2
 LIMIT=$3
-MESSAGE="OCI healthchechs monitor, there are healthchecks in red, that is, failed!!!"
+MONITORDESCRIPTION=$4
+MESSAGE="===================\nOCI healthchechs monitor\nThere are healthchecks in red, that is, failed, for $MONITORDESCRIPTION!!!\n===================\n"
 QUERY='data[?"is-healthy"!=`true`]."probe-configuration-id"'
 DATE=`date`
 COMMAND="oci health-checks http-probe-result list --probe-configuration-id $PROBEID --query $QUERY --limit $LIMIT"
