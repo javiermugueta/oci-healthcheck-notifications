@@ -1,5 +1,6 @@
 #!/bin/bash
-# jmu 13/Jan/2020
+# jmu 13/Jan/2020 new
+# jmu 13/Jun/2020 improved
 PROBEID=$1
 TOPIC=$2
 LIMIT=$3
