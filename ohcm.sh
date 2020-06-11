@@ -6,11 +6,11 @@ TOPIC=$2
 LIMIT=$3
 MONITORDESCRIPTION=$4
 MESSAGE="OCI healthchechs monitor. There are healthchecks in red, that is, failed for $MONITORDESCRIPTION!!!"
-QUERY='data[?"is-healthy"!=`true`]."probe-configuration-id"'
+QUERY='data[?"status-code"!="200"]."error-message"'
 DATE=`date`
-COMMAND="oci health-checks http-probe-result list --probe-configuration-id $PROBEID --query $QUERY --limit $LIMIT"
+COMMAND="oci health-checks http-probe-result list --probe-configuration-id $PROBEID --query '$QUERY' --limit $LIMIT --sort-order DESC"
 echo $COMMAND
-RESULT=($COMMAND)
+RESULT=$COMMAND
 echo $RESULT
 if [[ $RESULT != '' ]]; then
     echo "KO"
