@@ -7,7 +7,7 @@ MESSAGE="OCI healthchechs monitor, there are healthchecks in red, that is failed
 QUERY='data[?"is-healthy"!=`true`]."probe-configuration-id"'
 DATE=`date`
 COMMAND=`oci health-checks http-probe-result list --probe-configuration-id $PROBEID --query $QUERY --limit $LIMIT`
-#echo $COMMAND
+echo $COMMAND
 if [[ $COMMAND != '' ]]; then
     echo "KO"
     oci ons message publish --topic-id $2 --body "{date: $DATE, msg: $MESSAGE}"
