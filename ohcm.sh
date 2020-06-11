@@ -13,7 +13,7 @@ echo "$COMMAND"
 RESULT=$($COMMAND)
 echo "$RESULT"
 if [[ "$RESULT" != '' ]]; then
-    echo "KO"
+    echo "KO, will send a notification via oci ons"
     oci ons message publish --topic-id $2 --body "{date: $DATE, msg: $MESSAGE}"
 else
     echo "OK"
